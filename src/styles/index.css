@@ -1,0 +1,96 @@
+/* Slick Carousel Styles */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.hero {
+    background-image: url('https://placehold.co/1920x1080');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    transform: rotate(-15deg);
+}
+.nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    color: white;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+.nav .search {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.hero-text {
+    max-width: 600px;
+}
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.hero-text h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.hero-text button {
+    background: #1E3A8A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.calendar-custom {
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+img {
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slick-dots li button:before {
+color: #3b82f6; /* Tailwind blue-500 */
+}
