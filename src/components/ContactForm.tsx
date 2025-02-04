@@ -8,7 +8,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
   return (
     <section id="contact" className="py-16 bg-gray-200">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-8">Request for Proposal</h2>
+        <h2 className="text-4xl font-bold text-center mb-8">Book a Visit</h2>
         <form className="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -33,22 +33,33 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
                 placeholder="Your Email"
               />
             </div>
-          </div>
-          <div className="mt-6">
-            <label htmlFor="selected-date" className="block text-gray-700 font-semibold mb-2">
-              Selected Date
-            </label>
-            <input
-              type="text"
-              id="selected-date"
-              className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
-              value={selectedDate ? selectedDate.toDateString() : "No Date Selected"}
-              readOnly
-            />
+            <div>
+              <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                Phone Number
+              </label>
+              <input
+                type="number"
+                id="number"
+                className="w-full border rounded-lg px-4 py-2"
+                placeholder="Your Email"
+              />
+            </div>
+            <div>
+              <label htmlFor="selected-date" className="block text-gray-700 font-semibold mb-2">
+                Selected Date
+              </label>
+              <input
+                type="text"
+                id="selected-date"
+                className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
+                value={selectedDate ? selectedDate.toDateString() : "No Date Selected"}
+                readOnly
+              />
+            </div>
           </div>
           <div className="mt-6">
             <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
-              Message
+              Any Comments, Questions or Concerns!
             </label>
             <textarea
               id="message"

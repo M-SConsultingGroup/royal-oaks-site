@@ -25,8 +25,8 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ onDateSelect }) => {
   };
 
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto text-center">
+    <section className="flex items-center py-16 bg-gray-100">
+      <div className="item-center container text-center">
         <h2 className="text-4xl font-bold mb-8">Check Availability</h2>
         <div className="max-w-lg mx-auto bg-white shadow-lg p-8 rounded-lg">
           <Calendar
