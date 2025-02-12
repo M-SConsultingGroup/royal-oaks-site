@@ -1,20 +1,53 @@
-
 const Features = () => {
   const features = [
-    { title: "Meetings", description: "Host corporate meetings and events." },
-    { title: "Weddings", description: "Plan your dream wedding." },
-    { title: "Trade Shows", description: "Perfect venue for large expos." },
+    {
+      title: "Corporate Events & Meetings",
+      description: "Host corporate meetings and events.",
+      image: "corporateEvents.jpeg",
+    },
+    {
+      title: "Weddings",
+      description: "Plan your dream wedding.",
+      image: "weddingFeature.jpeg",
+    },
+    {
+      title: "Trade Shows",
+      description: "Perfect venue for large expos.",
+      image: "tradeShow.jpeg",
+    },
   ];
 
   return (
-    <section className="py-12 bg-gray-100">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Features</h2>
-        <div className="grid md:grid-cols-3 gap-4">
+    <section className="py-20 bg-[#F8F3ED]">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-5xl font-bold text-[#8B7969] mb-12 uppercase tracking-wide">
+          Our Services
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((feature, index) => (
-            <div key={index} className="p-4 bg-white shadow rounded">
-              <h3 className="text-xl font-bold">{feature.title}</h3>
-              <p className="mt-2 text-gray-600">{feature.description}</p>
+            <div
+              key={index}
+              className="bg-white rounded-3xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              {/* Image */}
+              <img
+                src={feature.image}
+                alt={feature.title}
+                className="w-full h-64 object-cover"
+              />
+
+              {/* Content */}
+              <div className="p-6 text-center">
+                {/* Title */}
+                <h3 className="text-2xl font-semibold text-[#5A4A42] mb-4">
+                  {feature.title}
+                </h3>
+
+                {/* Button */}
+                <button className="mt-4 px-6 py-3 bg-[#8B7969] text-white rounded-full text-lg font-semibold transition duration-300 hover:bg-[#6d5d50]">
+                  Read More
+                </button>
+              </div>
             </div>
           ))}
         </div>
