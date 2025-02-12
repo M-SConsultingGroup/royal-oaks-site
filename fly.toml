@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for pg-mech-app on 2024-12-15T22:58:37-06:00
+
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+
+app = 'royal-oak-site'
+primary_region = 'dfw'
+
+[build]
+  build_command = "npm install && npm run build"
+  publish_directory = "dist"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
