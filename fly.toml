@@ -6,8 +6,7 @@ app = 'event-center-demo'
 primary_region = 'dfw'
 
 [build]
-  build_command = "npm install && npm run build"
-  publish_directory = "dist"
+  builder = "heroku/buildpacks:20"
 
 [http_service]
   internal_port = 8080
