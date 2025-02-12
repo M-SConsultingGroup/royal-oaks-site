@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=AvianoRoyale:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Aviano Royale';
+  src: url('/fonts/AvianoRoyale-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 #root {
   max-width: 1280px;
@@ -17,9 +22,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -28,6 +35,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -45,4 +53,15 @@
 
 .read-the-docs {
   color: #888;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Aviano Royale', sans-serif;
+  /* Add a fallback font to ensure the font is applied */
+  font-family: 'Aviano Royale', 'Roboto', sans-serif;
 }
