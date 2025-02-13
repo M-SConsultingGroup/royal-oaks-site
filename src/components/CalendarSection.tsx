@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import "@/styles/calendarStyles.css";
 
 interface CalendarSectionProps {
   onDateSelect: (date: Date | null) => void;
@@ -26,12 +25,10 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ onDateSelect }) => {
   };
 
   return (
-    <section className="py-20 bg-[#F8F3ED]">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-5xl font-bold text-[#8B7969] mb-12 uppercase tracking-wide">
-          Check Availability
-        </h2>
-        <div className="max-w-lg mx-auto bg-white shadow-lg p-8 rounded-3xl">
+    <section className="flex items-center py-16 bg-gray-100">
+      <div className="item-center container text-center">
+        <h2 className="text-4xl font-bold mb-8">Check Availability</h2>
+        <div className="max-w-lg mx-auto bg-white shadow-lg p-8 rounded-lg">
           <Calendar
             onChange={(date) => handleDateChange(date as Date | null)}
             value={selectedDate}

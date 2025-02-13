@@ -6,12 +6,10 @@ interface ContactFormProps {
 
 const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
   return (
-    <section id="contact" className="py-20 bg-[#F8F3ED]">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-5xl font-bold text-[#8B7969] mb-12 uppercase tracking-wide">
-          Book a Visit
-        </h2>
-        <form className="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-3xl">
+    <section id="contact" className="py-16 bg-gray-200">
+      <div className="container mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-8">Book a Visit</h2>
+        <form className="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
@@ -36,14 +34,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
               />
             </div>
             <div>
-              <label htmlFor="number" className="block text-gray-700 font-semibold mb-2">
+              <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
                 Phone Number
               </label>
               <input
                 type="number"
                 id="number"
                 className="w-full border rounded-lg px-4 py-2"
-                placeholder="Your Phone Number"
+                placeholder="Your Email"
               />
             </div>
             <div>
@@ -72,7 +70,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
           </div>
           <button
             type="submit"
-            className="mt-6 bg-[#8B7969] px-6 py-3 rounded-full text-white font-semibold hover:bg-[#6d5d50] transition"
+            className="mt-6 bg-blue-500 px-6 py-3 rounded-full text-white font-semibold hover:bg-blue-600 transition"
           >
             Submit
           </button>
