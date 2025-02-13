@@ -6,7 +6,7 @@ app = 'event-center-demo'
 primary_region = 'dfw'
 
 [build]
-  builder = "heroku/buildpacks:20"
+  dockerfile = "Dockerfile"
 
 [http_service]
   internal_port = 8080
