@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu } from "lucide-react"; // Mobile menu icon
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // Adjust the threshold as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-[#F8F3ED] bg-opacity-90 backdrop-blur-lg shadow-md z-50">
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
+      ${isScrolled ? "bg-[#F8F3ED] bg-opacity-90 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative h-[7rem]">
         
         {/* Mobile Menu Button (Left Aligned in Mobile) */}
