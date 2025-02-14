@@ -6,27 +6,31 @@ interface ContactFormProps {
 
 const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
   return (
-    <section id="contact" className="relative py-20 bg-white overflow-hidden">
+    <section id="contact" className="relative py-20 bg-white overflow-hidden" data-aos="fade-up">
       {/* Decorative Branch Images */}
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute top-10 left-10 w-32 h-auto rotate-[-28deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-right"
       />
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute bottom-20 right-10 w-24 h-auto rotate-[15deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-left"
       />
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute top-20 right-20 w-28 h-auto rotate-[45deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-right"
       />
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute bottom-10 left-20 w-20 h-auto rotate-[-10deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-left"
       />
 
       <div className="container mx-auto px-6">

@@ -1,6 +1,6 @@
 const VideoSection = () => {
   return (
-    <section className="relative py-20 bg-button overflow-hidden">
+    <section className="relative py-20 bg-button overflow-hidden" data-aos="fade-up">
       {/* Abstract Floating Elements */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-secondary opacity-20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-24 h-24 bg-secondary opacity-30 rounded-full blur-2xl animate-pulse"></div>
@@ -10,18 +10,20 @@ const VideoSection = () => {
         src="branch.png"
         alt="Decorative Branch"
         className="absolute top-16 right-10 w-20 h-auto opacity-60 shadow-none rotate-12"
+        data-aos="fade-right"
       />
       <img
         src="branch.png"
         alt="Decorative Branch"
         className="absolute bottom-16 left-10 w-24 h-auto opacity-50 shadow-none rotate-[-15deg]"
+        data-aos="fade-left"
       />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Side - Image + Text */}
-          <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left" data-aos="fade-right">
             {/* Decorative Rotated Branch */}
             <img
               src="branch.png"
@@ -52,7 +54,7 @@ const VideoSection = () => {
           </div>
 
           {/* Right Side - Larger Video */}
-          <div className="relative w-full">
+          <div className="relative w-full" data-aos="fade-left">
             {/* Glow Effect */}
             <div className="absolute -inset-2 bg-gradient-to-br from-secondary to-primary opacity-20 rounded-xl blur-3xl transition duration-300"></div>
 

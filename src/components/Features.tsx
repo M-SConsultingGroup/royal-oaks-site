@@ -18,9 +18,9 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" data-aos="fade-up">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-5xl font-bold text-secondary mb-12 uppercase tracking-wide">
+        <h2 className="text-5xl font-bold text-secondary mb-12 uppercase tracking-wide" data-aos="fade-down">
           Our Services
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -28,6 +28,8 @@ const Features = () => {
             <div
               key={index}
               className="bg-white rounded-3xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+              data-aos="fade-up"
+              data-aos-delay={`${index * 100}`}
             >
               {/* Image */}
               <img

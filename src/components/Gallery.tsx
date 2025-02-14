@@ -28,27 +28,31 @@ const GalleryCarousel = () => {
   };
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-20 bg-white relative" data-aos="fade-up">
       {/* Decorative Branch Images */}
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute top-10 left-10 w-32 h-auto rotate-[-28deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-right"
       />
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute bottom-20 right-10 w-24 h-auto rotate-[15deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-left"
       />
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute top-20 right-20 w-28 h-auto rotate-[45deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-right"
       />
       <img
         src="modified_branch.png"
         alt="Decorative Branch"
         className="absolute bottom-10 left-20 w-20 h-auto rotate-[-10deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-left"
       />
 
       <div className="max-w-6xl mx-auto px-6 text-center">
@@ -66,6 +70,7 @@ const GalleryCarousel = () => {
                   alt={`Gallery ${index + 1}`}
                   className="w-full h-[400px] object-cover rounded-xl transition-transform duration-500 group-hover:scale-105 cursor-pointer"
                   onClick={() => setModalImage(src)}
+                  data-aos="zoom-in"
                 />
 
                 {/* Overlay Effect (Disabled Click Interference) */}
@@ -78,6 +83,7 @@ const GalleryCarousel = () => {
           <button
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-secondary text-white p-3 rounded-full shadow-md transition-transform duration-300 hover:scale-110"
             onClick={() => sliderRef?.slickPrev()}
+            data-aos="fade-right"
           >
             <FaChevronLeft size={24} />
           </button>
@@ -86,6 +92,7 @@ const GalleryCarousel = () => {
           <button
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-secondary text-white p-3 rounded-full shadow-md transition-transform duration-300 hover:scale-110"
             onClick={() => sliderRef?.slickNext()}
+            data-aos="fade-left"
           >
             <FaChevronRight size={24} />
           </button>
@@ -97,6 +104,7 @@ const GalleryCarousel = () => {
         <div
           className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-md z-50"
           onClick={() => setModalImage(null)}
+          data-aos="zoom-in"
         >
           <div className="relative max-w-4xl w-full p-4">
             {/* Close Button */}

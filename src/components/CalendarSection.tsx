@@ -23,27 +23,31 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ onDateSelect }) => {
   };
 
   return (
-    <section className="relative py-20 bg-primary">
+    <section className="relative py-20 bg-primary" data-aos="fade-up">
       {/* Decorative Branch Images */}
       <img
         src="branch.png"
         alt="Decorative Branch"
         className="absolute top-10 left-10 w-32 h-auto rotate-[-28deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-right"
       />
       <img
         src="branch.png"
         alt="Decorative Branch"
         className="absolute bottom-20 right-10 w-24 h-auto rotate-[15deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-left"
       />
       <img
         src="branch.png"
         alt="Decorative Branch"
         className="absolute top-20 right-20 w-28 h-auto rotate-[45deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-right"
       />
       <img
         src="branch.png"
         alt="Decorative Branch"
         className="absolute bottom-10 left-20 w-20 h-auto rotate-[-10deg] opacity-80 z-10 hidden lg:block shadow-none"
+        data-aos="fade-left"
       />
 
       {/* Centered Calendar Section */}
@@ -72,4 +76,4 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ onDateSelect }) => {
   );
 };
 
-export default CalendarSection; 
+export default CalendarSection;
