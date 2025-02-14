@@ -10,15 +10,27 @@ const HeroSection = () => {
       {/* Semi-transparent overlay for a dreamy, elegant look */}
       <div className="absolute inset-0 bg-white bg-opacity-50"></div>
 
+      {/* Decorative Branch Elements */}
+      <img
+        src="branch.png"
+        alt="Decorative Branch"
+        className="absolute top-10 left-10 w-24 h-auto opacity-60 shadow-none rotate-12"
+      />
+      <img
+        src="branch.png"
+        alt="Decorative Branch"
+        className="absolute bottom-10 right-10 w-28 h-auto opacity-50 shadow-none rotate-[-15deg]"
+      />
+
       {/* Content */}
       <div className="relative z-10">
-        <h1 className="text-6xl font-serif font-extrabold text-[#8B7969] drop-shadow-lg mb-4 tracking-wide">
+        <h1 className="text-6xl font-serif font-extrabold text-primary drop-shadow-lg mb-4 tracking-wide">
           Royal Oaks Event Venue
         </h1>
-        <p className="text-2xl text-[#A89685] drop-shadow-md mb-6 font-light italic">
+        <p className="text-2xl text-secondary drop-shadow-md mb-6 font-light italic">
           The perfect setting for your dream event
         </p>
-        <button className="bg-[#C3A382] text-white px-8 py-3 text-lg font-semibold rounded-full shadow-md hover:bg-[#B19172] transition-all duration-300">
+        <button className="bg-button text-powderBlue px-8 py-3 text-lg font-semibold rounded-full shadow-md hover:bg-buttonShadow transition-all duration-300">
           Book Your Event
         </button>
       </div>

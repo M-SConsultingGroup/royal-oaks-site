@@ -16,12 +16,12 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
-      ${isScrolled ? "bg-[#F8F3ED] bg-opacity-90 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
+      ${isScrolled ? "bg-primary bg-opacity-90 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative h-[7rem]">
         
         {/* Mobile Menu Button (Left Aligned in Mobile) */}
         <div className="md:hidden flex items-center flex-shrink-0">
-          <button className="text-[#8B7969] hover:text-[#A89685] transition" onClick={() => setMenuOpen(!menuOpen)}>
+          <button className="text-secondary hover:text-button transition" onClick={() => setMenuOpen(!menuOpen)}>
             <Menu size={32} />
           </button>
         </div>
@@ -36,11 +36,11 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation (Right Aligned) */}
-        <nav className="hidden md:flex space-x-10 text-[#8B7969] text-lg font-semibold uppercase tracking-wide">
-          <a href="#" className="hover:text-[#A89685] transition-all duration-300">Home</a>
-          <a href="#about" className="hover:text-[#A89685] transition-all duration-300">About</a>
-          <a href="#events" className="hover:text-[#A89685] transition-all duration-300">Events</a>
-          <a href="#contact" className="hover:text-[#A89685] transition-all duration-300">Contact</a>
+        <nav className="hidden md:flex space-x-10 text-secondary text-lg font-semibold uppercase tracking-wide">
+          <a href="#" className="hover:text-button transition-all duration-300">Home</a>
+          <a href="#about" className="hover:text-button transition-all duration-300">About</a>
+          <a href="#events" className="hover:text-button transition-all duration-300">Events</a>
+          <a href="#contact" className="hover:text-button transition-all duration-300">Contact</a>
         </nav>
 
         {/* Empty Spacer (For Desktop Layout Alignment) */}
@@ -49,11 +49,11 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#F8F3ED] py-6 space-y-5 text-center text-[#8B7969] text-lg font-semibold uppercase tracking-wide shadow-lg">
-          <a href="#" className="block hover:text-[#A89685] transition-all duration-300">Home</a>
-          <a href="#about" className="block hover:text-[#A89685] transition-all duration-300">About</a>
-          <a href="#events" className="block hover:text-[#A89685] transition-all duration-300">Events</a>
-          <a href="#contact" className="block hover:text-[#A89685] transition-all duration-300">Contact</a>
+        <div className="md:hidden bg-primary py-6 space-y-5 text-center text-secondary text-lg font-semibold uppercase tracking-wide shadow-lg">
+          <a href="#" className="block hover:text-button transition-all duration-300">Home</a>
+          <a href="#about" className="block hover:text-button transition-all duration-300">About</a>
+          <a href="#events" className="block hover:text-button transition-all duration-300">Events</a>
+          <a href="#contact" className="block hover:text-button transition-all duration-300">Contact</a>
         </div>
       )}
     </header>

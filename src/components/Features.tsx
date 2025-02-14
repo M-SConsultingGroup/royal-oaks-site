@@ -18,9 +18,9 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#F8F3ED]">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-5xl font-bold text-[#8B7969] mb-12 uppercase tracking-wide">
+        <h2 className="text-5xl font-bold text-secondary mb-12 uppercase tracking-wide">
           Our Services
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -39,12 +39,12 @@ const Features = () => {
               {/* Content */}
               <div className="p-6 text-center">
                 {/* Title */}
-                <h3 className="text-2xl font-semibold text-[#5A4A42] mb-4">
+                <h3 className="text-2xl font-semibold text-secondary mb-4">
                   {feature.title}
                 </h3>
 
                 {/* Button */}
-                <button className="mt-4 px-6 py-3 bg-[#8B7969] text-white rounded-full text-lg font-semibold transition duration-300 hover:bg-[#6d5d50]">
+                <button className="mt-4 px-6 py-3 bg-button text-powderBlue rounded-full text-lg font-semibold transition duration-300 hover:bg-buttonShadow">
                   Read More
                 </button>
               </div>

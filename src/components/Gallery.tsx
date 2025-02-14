@@ -28,9 +28,31 @@ const GalleryCarousel = () => {
   };
 
   return (
-    <section className="py-20 bg-[#f7f4f0] relative">
+    <section className="py-20 bg-white relative">
+      {/* Decorative Branch Images */}
+      <img
+        src="modified_branch.png"
+        alt="Decorative Branch"
+        className="absolute top-10 left-10 w-32 h-auto rotate-[-28deg] opacity-80 z-10 hidden lg:block shadow-none"
+      />
+      <img
+        src="modified_branch.png"
+        alt="Decorative Branch"
+        className="absolute bottom-20 right-10 w-24 h-auto rotate-[15deg] opacity-80 z-10 hidden lg:block shadow-none"
+      />
+      <img
+        src="modified_branch.png"
+        alt="Decorative Branch"
+        className="absolute top-20 right-20 w-28 h-auto rotate-[45deg] opacity-80 z-10 hidden lg:block shadow-none"
+      />
+      <img
+        src="modified_branch.png"
+        alt="Decorative Branch"
+        className="absolute bottom-10 left-20 w-20 h-auto rotate-[-10deg] opacity-80 z-10 hidden lg:block shadow-none"
+      />
+
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-5xl font-extrabold text-[#5A4A42] mb-10 uppercase tracking-wide">
+        <h2 className="text-5xl font-extrabold text-secondary mb-10 uppercase tracking-wide">
           Event Gallery
         </h2>
 
@@ -54,7 +76,7 @@ const GalleryCarousel = () => {
 
           {/* Left Arrow */}
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#8B7969] text-white p-3 rounded-full shadow-md transition-transform duration-300 hover:scale-110"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-secondary text-white p-3 rounded-full shadow-md transition-transform duration-300 hover:scale-110"
             onClick={() => sliderRef?.slickPrev()}
           >
             <FaChevronLeft size={24} />
@@ -62,7 +84,7 @@ const GalleryCarousel = () => {
 
           {/* Right Arrow */}
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#8B7969] text-white p-3 rounded-full shadow-md transition-transform duration-300 hover:scale-110"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-secondary text-white p-3 rounded-full shadow-md transition-transform duration-300 hover:scale-110"
             onClick={() => sliderRef?.slickNext()}
           >
             <FaChevronRight size={24} />
