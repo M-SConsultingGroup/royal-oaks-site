@@ -56,7 +56,7 @@ const GalleryCarousel = () => {
       />
 
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-5xl font-extrabold text-secondary mb-10 uppercase tracking-wide">
+        <h2 className="text-5xl font-sarif text-secondary mb-10 uppercase tracking-wide">
           Event Gallery
         </h2>
 

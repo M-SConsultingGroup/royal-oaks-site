@@ -32,7 +32,7 @@ const VideoSection = () => {
             />
             
             {/* Title */}
-            <h4 className="text-3xl font-extrabold text-white mb-4 uppercase">
+            <h4 className="text-3xl font-serif text-white mb-4 uppercase">
               Experience Elegance at Royal Oaks Event Venue
             </h4>
 
@@ -47,7 +47,7 @@ const VideoSection = () => {
             {/* Contact Us Button */}
             <a
               href="https://royaloakseventvenue.com/contact-us/"
-              className="mt-6 inline-block px-6 py-3 bg-primary text-white font-semibold rounded-full text-lg transition duration-300 hover:bg-darkButtonShadow"
+              className="mt-6 inline-block px-6 py-3 bg-primary text-white font-serif rounded-full text-lg transition duration-300 hover:bg-darkButtonShadow"
             >
               Contact Us
             </a>

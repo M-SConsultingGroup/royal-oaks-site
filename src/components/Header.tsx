@@ -36,7 +36,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation (Right Aligned) */}
-        <nav className={`hidden md:flex space-x-10 text-lg font-semibold uppercase tracking-wide 
+        <nav className={`hidden md:flex space-x-10 text-lg font-serif uppercase tracking-wide 
           ${isScrolled ? "text-white" : "text-primary"}`}>
           <a href="#" className="hover:text-button transition-all duration-300">Home</a>
           <a href="#about" className="hover:text-button transition-all duration-300">About</a>

@@ -34,12 +34,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
       />
 
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-8 text-secondary">Book a Visit</h2>
+        {/* Updated h2 with font-serif */}
+        <h2 className="text-4xl font-bold text-center mb-8 text-secondary font-serif">Book a Visit</h2>
         <form className="max-w-4xl mx-auto bg-white p-8 shadow-2xl rounded-xl relative z-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-secondary font-semibold mb-2">
+              {/* Updated label with font-serif */}
+              <label htmlFor="name" className="block text-secondary font-semibold mb-2 font-serif">
                 Name
               </label>
               <input
@@ -52,7 +54,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-secondary font-semibold mb-2">
+              {/* Updated label with font-serif */}
+              <label htmlFor="email" className="block text-secondary font-semibold mb-2 font-serif">
                 Email
               </label>
               <input
@@ -65,7 +68,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
 
             {/* Phone Number Field */}
             <div>
-              <label htmlFor="phone" className="block text-secondary font-semibold mb-2">
+              {/* Updated label with font-serif */}
+              <label htmlFor="phone" className="block text-secondary font-semibold mb-2 font-serif">
                 Phone Number
               </label>
               <input
@@ -78,7 +82,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
 
             {/* Selected Date Field */}
             <div>
-              <label htmlFor="selected-date" className="block text-secondary font-semibold mb-2">
+              {/* Updated label with font-serif */}
+              <label htmlFor="selected-date" className="block text-secondary font-semibold mb-2 font-serif">
                 Selected Date
               </label>
               <input
@@ -93,7 +98,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ selectedDate }) => {
 
           {/* Message Field */}
           <div className="mt-6">
-            <label htmlFor="message" className="block text-secondary font-semibold mb-2">
+            {/* Updated label with font-serif */}
+            <label htmlFor="message" className="block text-secondary font-semibold mb-2 font-serif">
               Any Comments, Questions, or Concerns!
             </label>
             <textarea

@@ -53,7 +53,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ onDateSelect }) => {
       {/* Centered Calendar Section */}
       <div className="container mx-auto px-6 flex justify-center">
         <div className="text-center">
-          <h2 className="text-4xl font-bold mb-8 text-white">Check Availability</h2>
+          <h2 className="text-4xl font-bold mb-8 text-white font-serif">Check Availability</h2>
           <div className="max-w-lg mx-auto bg-white shadow-lg p-8 rounded-lg relative z-20">
             <Calendar
               onChange={(date) => handleDateChange(date as Date | null)}
@@ -62,7 +62,7 @@ const CalendarSection: React.FC<CalendarSectionProps> = ({ onDateSelect }) => {
               className="calendar-custom"
             />
             <div className="mt-6">
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-lg font-semibold font-serif">
                 Selected Date:{" "}
                 <span className="text-blue-500">
                   {selectedDate ? selectedDate.toDateString() : "None"}
