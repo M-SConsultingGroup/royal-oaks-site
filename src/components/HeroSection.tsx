@@ -32,7 +32,7 @@ const HeroSection = () => {
         <p className="text-2xl text-secondary drop-shadow-md mb-6 font-light italic">
           The perfect setting for your dream event
         </p>
-        <button className="bg-button text-powderBlue px-8 py-3 text-lg font-semibold rounded-full shadow-md hover:bg-buttonShadow transition-all duration-300">
+        <button className="bg-button text-white px-8 py-3 text-lg font-semibold font-serif rounded-full shadow-md hover:bg-buttonShadow transition-all duration-300">
           Book Your Event
         </button>
       </div>

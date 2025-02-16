@@ -1,9 +1,15 @@
 import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
+import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const port = 3000;
+
+// Use CORS middleware
+app.use(cors());
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -12,8 +18,8 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'your-email@gmail.com',
-    pass: 'your-password'
+    user: process.env.EMAIL,
+    pass: process.env.APP_PASSWORD
   }
 });
 
@@ -24,28 +30,20 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 // Route to handle form submissions
-app.post('/submit-form', async (req, res) => {
+app.post('/submit-form', async (req: Request, res: Response) => {
   const { name, email, phone, message } = req.body;
 
-  if (!name || !email || !phone || !message) {
+  if (!name || !email || !phone) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
   try {
     // Email to the submitter
     await transporter.sendMail({
-      from: 'your-email@gmail.com',
+      from: process.env.EMAIL,
       to: email,
       subject: 'Form Submission Confirmation',
-      text: `Thank you for your submission, ${name}! We will get back to you shortly.`
-    });
-
-    // Email to the owner (replace with actual owner's email)
-    await transporter.sendMail({
-      from: 'your-email@gmail.com',
-      to: 'owner@example.com',
-      subject: 'New Form Submission',
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
+      text: `Thank you for your request, ${name}! We will get back to you shortly.`
     });
 
     res.status(200).json({ message: 'Form submitted successfully!' });
