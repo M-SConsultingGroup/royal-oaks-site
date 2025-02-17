@@ -1,7 +1,7 @@
 {
-  "name": "event-center-demo-1",
+  "name": "royal-oaks-web-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm:dev:*\"",

@@ -1,6 +1,19 @@
 version: '3.8'
 services:
-  web:
+  backend:
     build: .
     ports:
-      - "3000:8080"  # Map container's port 8080 to host's port 3000
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - frontend
+
+  frontend:
+    build:
+      context: .  # Or specify the client directory if the build context differs
+      dockerfile: Dockerfile  # If this differs for the frontend
+    ports:
+      - "8080:8080"  # Assuming the frontend serves on port 8080 as expected
+    environment:
+      - NODE_ENV=production
