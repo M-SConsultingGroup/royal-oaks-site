@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
-      ${isScrolled ? "bg-primary bg-opacity-90 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
+      ${isScrolled ? "bg-button bg-opacity-90 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative h-[7rem]">
         
         {/* Mobile Menu Button (Left Aligned in Mobile) */}
