@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;;
 
-// Email credentials (replace with your actual email and password)
+// Email credentials
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
 // Use CORS middleware
 app.use(cors());
 
-// Serve static files from the React app
+// Serve static files
 app.use(express.static(path.join(__dirname, '../../public')));
 
 // Body parser middleware
@@ -75,7 +75,7 @@ app.post('/submit-form', async (req: Request, res: Response) => {
         </small>
       </p>
     </div>
-  `;
+    `;
 
     await transporter.sendMail({
       from: process.env.EMAIL,
@@ -89,6 +89,12 @@ app.post('/submit-form', async (req: Request, res: Response) => {
     console.error('Error sending email:', error);
     res.status(500).json({ error: 'Failed to send email' });
   }
+});
+
+// Middleware to handle errors globally
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  console.error(err.stack);
+  res.status(500).json({ message: 'Something went wrong' });
 });
 
 app.listen(port, () => {

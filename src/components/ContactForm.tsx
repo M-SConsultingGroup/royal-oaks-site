@@ -2,7 +2,7 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-const API_URL = 'http://localhost:8080';
+const API_URL = `${window.location.origin}`;
 
 const ContactForm = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
