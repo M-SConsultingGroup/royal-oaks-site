@@ -14,6 +14,14 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleSmoothScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false); // Close the mobile menu after clicking a link
+  };
+
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
       ${isScrolled ? "bg-button bg-opacity-90 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
@@ -39,10 +47,10 @@ const Header = () => {
 
         {/* Desktop Navigation (Right Aligned) */}
         <nav className={`hidden md:flex space-x-10 text-lg font-serif uppercase tracking-wide 
-          ${isScrolled ? "text-white" : "text-primary"}`}>
-          <a href="#about" className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>About</a>
-          <a href="#events" className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Events</a>
-          <a href="#contact" className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Contact</a>
+          ${isScrolled ? "text-white" : "text-primary"} scroll-smooth`}>
+          <a href="#about" onClick={() => handleSmoothScroll('about')} className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>About</a>
+          <a href="#events" onClick={() => handleSmoothScroll('events')} className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Events</a>
+          <a href="#contact" onClick={() => handleSmoothScroll('contact')} className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Contact</a>
         </nav>
 
         {/* Empty Spacer (For Desktop Layout Alignment) */}
@@ -51,11 +59,11 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-primary py-6 space-y-5 text-center text-secondary text-lg font-semibold uppercase tracking-wide shadow-lg">
-          <a href="#" className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Home</a>
-          <a href="#about" className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>About</a>
-          <a href="#events" className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Events</a>
-          <a href="#contact" className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Contact</a>
+        <div className="md:hidden bg-primary py-6 space-y-5 text-center text-secondary text-lg font-semibold uppercase tracking-wide shadow-lg scroll-smooth">
+          <a href="#" onClick={() => handleSmoothScroll('')} className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Home</a>
+          <a href="#about" onClick={() => handleSmoothScroll('about')} className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>About</a>
+          <a href="#events" onClick={() => handleSmoothScroll('events')} className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Events</a>
+          <a href="#contact" onClick={() => handleSmoothScroll('contact')} className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}>Contact</a>
         </div>
       )}
     </header>

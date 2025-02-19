@@ -12,8 +12,9 @@ const App = () => {
     <div>
       <Header />
       <HeroSection />
-      <Features />
       <VideoSection />
+
+      <Features />
       <Gallery />
       <ContactForm />
     </div>

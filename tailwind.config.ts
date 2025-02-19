@@ -11,6 +11,7 @@ module.exports = {
       },
       colors: {
         primary: '#C3A382',
+        primaryHover: '#B08F6F',
         secondary: '#8B7969',
         button: '#0C1533', // Change this to your darker blue
         buttonShadow: '#08406F', // Slightly darker shadow for button
