@@ -72,7 +72,7 @@ const ContactForm = () => {
   };
   
   return (
-    <section id="contact" className="relative py-20 bg-button overflow-hidden" data-aos="fade-up">
+    <section id="contact" className="relative py-20 bg-white overflow-hidden" data-aos="fade-up">
       {/* Decorative Branch Images */}
       <img
         src="modified_branch.png"
@@ -101,7 +101,7 @@ const ContactForm = () => {
 
       <div className="container mx-auto px-6">
         {/* Updated h2 with font-serif */}
-        <h2 className="text-4xl font-bold text-center mb-8 text-white font-serif">Book a Visit</h2>
+        <h2 className="text-4xl font-bold text-center mb-8 text-primary font-serif">Book a Visit</h2>
 
         {/* Display success or error message */}
         {successMessage && <div className="mb-4 text-green-500">{successMessage}</div>}

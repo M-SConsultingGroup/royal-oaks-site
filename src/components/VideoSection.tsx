@@ -1,6 +1,6 @@
 const VideoSection = () => {
   return (
-    <section className="relative py-20 bg-button overflow-hidden" data-aos="fade-up">
+    <section className="relative py-20 bg-button overflow-hidden" data-aos="fade-up" id="about">
       {/* Abstract Floating Elements */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-secondary opacity-20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-24 h-24 bg-secondary opacity-30 rounded-full blur-2xl animate-pulse"></div>

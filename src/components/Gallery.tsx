@@ -29,7 +29,7 @@ const Gallery = () => {
   // Custom Next & Previous Buttons
   const NextArrow = ({ onClick }: ArrowProps) => (
     <button 
-      className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 transition z-10"
+      className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary text-white p-2 rounded-full shadow-md hover:bg-primaryHover transition z-10"
       onClick={onClick}
     >
       <ChevronRightIcon className="w-6 h-6" />
@@ -38,7 +38,7 @@ const Gallery = () => {
 
   const PrevArrow = ({ onClick }: ArrowProps) => (
     <button 
-      className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 transition z-10"
+      className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary text-white p-2 rounded-full shadow-md hover:bg-primaryHover transition z-10"
       onClick={onClick}
     >
       <ChevronLeftIcon className="w-6 h-6" />
@@ -58,19 +58,20 @@ const Gallery = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4 relative">
+    <div className="w-full  mx-auto p-4 relative bg-button">
       {/* Title */}
-      <h2 className="text-4xl font-bold text-center mb-8 pt-4 text-secondary font-serif">Our Gallery</h2>
+      <h2 className="text-4xl font-bold text-center mb-8 pt-4 text-white">Our Gallery</h2>
 
       
-      {/* Image Carousel */}
-      <Slider {...settings} data-aos="fade-up">
-        {images.map((img, index) => (
-          <div key={index} onClick={() => setSelectedImage(img)} className="px-2" data-aos="zoom-in">
-            <img src={img} alt="" className="w-full h-80 object-cover cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
-          </div>
-        ))}
-      </Slider>
+{/* Image Carousel */}
+<Slider {...settings} data-aos="fade-up" className="max-w-2xl lg:justify-self-center">
+  {images.map((img, index) => (
+    <div key={index} onClick={() => setSelectedImage(img)} className="px-2 " data-aos="zoom-in" >
+      <img src={img} alt="" className="w-full h-80 object-cover cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+    </div>
+  ))}
+</Slider>
+
 
       {/* Lightbox Modal */}
       {selectedImage && (

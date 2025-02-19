@@ -26,6 +26,7 @@ const Features = () => {
             index % 2 === 0 ? "bg-gray-50" : "bg-white"
           }`}
           data-aos="fade-up"
+          id="events"
         >
           {/* Image Container */}
           <div
