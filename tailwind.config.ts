@@ -1,8 +1,8 @@
 module.exports = {
-  darkMode: "media", 
+  darkMode: "media",
   content: [
-    "./index.html", // Include your HTML entry point
-    "./src/**/*.{js,ts,jsx,tsx}", // Include all source files
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -12,9 +12,9 @@ module.exports = {
       colors: {
         primary: '#C3A382',
         secondary: '#8B7969',
-        button: '#B0E0E6',
-        buttonShadow: '#9AB3C2', // Slightly darker color for button shadow
-        darkButtonShadow: '#A38465', // Even darker color for hover effect
+        button: '#0C1533', // Change this to your darker blue
+        buttonShadow: '#08406F', // Slightly darker shadow for button
+        darkButtonShadow: '#072756', // Even darker color for hover effect
       },
     },
   },

@@ -1,0 +1,32 @@
+# fly.toml app configuration file generated for web-app-site on 2025-02-16T17:52:51-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'web-app-site'
+primary_region = 'dfw'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 8080
+
+  [[services.ports]]
+    port = 80
+    handlers = ['http']
+
+  [[services.ports]]
+    port = 443
+    handlers = ['tls', 'http']
+
+  [[services.tcp_checks]]
+    interval = '15s'
+    timeout = '2s'
+    grace_period = '5s'
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
