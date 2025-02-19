@@ -37,7 +37,7 @@ const VideoSection = () => {
             </h4>
 
             {/* Description */}
-            <p className="text-lg text-gray-700 max-w-md">
+            <p className="text-lg text-primary max-w-md">
               Nestled in the heart of the city, <span className="font-medium">Royal Oaks Event Venue</span> 
               offers a breathtaking setting for weddings, corporate events, and special celebrations. 
               Our stunning ballrooms, lush outdoor spaces, and exceptional service make every event unforgettable. 
