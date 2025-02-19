@@ -29,7 +29,7 @@ const Header = () => {
         {/* Logo (Left on Desktop, Center on Mobile) */}
         <div className="md:static absolute left-1/2 transform md:translate-x-0 -translate-x-1/2 flex">
           <img 
-            src="logo.png" 
+            src={isScrolled ? "darkLogo.png" : "logo.png"}
             alt="Royal Oaks Logo" 
             className="h-[5rem] md:h-[6rem] max-h-[7rem] object-contain shadow-none"
           />
