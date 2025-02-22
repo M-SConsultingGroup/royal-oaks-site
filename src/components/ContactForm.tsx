@@ -4,13 +4,13 @@ import "react-calendar/dist/Calendar.css";
 
 const API_URL = `${window.location.origin}`;
 
-const ContactForm = () => {
+const ContactForm = ({ preselectedPackage = '' }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState(preselectedPackage ? `Interested in ${preselectedPackage}` : '');
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
