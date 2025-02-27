@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { NavigationContextProvider, useNavigation } from './context/NavigationContext';
 import HomePage from './pages/HomePage';
 import PackagesPage from './pages/PackagesPage';
 import ContactPage from './pages/ContactPage';
@@ -9,26 +10,28 @@ const App = () => {
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/packages" element={<PackagePageWrapper />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
+      <NavigationContextProvider>
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/packages" element={<PackagePageWrapper />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </NavigationContextProvider>
     </Router>
   );
 };
 
 const PackagePageWrapper = () => {
-  const navigate = useNavigate();
+  const { navigateToContact } = useNavigation();
 
   const handleSelectPackage = (title: string) => {
-    navigate('/contact', { state: { preselectedPackage: title } });
+    navigateToContact({ state: { preselectedPackage: title } });
   };
 
   return <PackagesPage onSelectPackage={handleSelectPackage} />;
