@@ -5,9 +5,7 @@ const PackagesPage = ({ onSelectPackage }: { onSelectPackage: (title: string) =>
   return (
     <div>
       <Header />
-      <main className="max-w-7xl mx-auto py-6">
-        <PackageDeals onSelectPackage={onSelectPackage} />
-      </main>
+      <PackageDeals onSelectPackage={onSelectPackage} />
     </div>
   );
 };
