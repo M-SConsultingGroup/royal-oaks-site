@@ -4,13 +4,13 @@ import "react-calendar/dist/Calendar.css";
 
 const API_URL = `${window.location.origin}`;
 
-const ContactForm = () => {
+const ContactForm = ({ preselectedPackage = '' }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState(preselectedPackage ? `Interested in ${preselectedPackage}` : '');
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -33,14 +33,14 @@ const ContactForm = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    
+
     // Validate form inputs except for the message field
     if (!name || !email || !phone || !selectedDate) {
       setError('Name, email, phone, and date are required.');
       return;
     }
     setError(''); // Clear any previous errors
-  
+
     try {
       const response = await fetch(`${API_URL}/submit-form`, {
         method: 'POST',
@@ -53,7 +53,7 @@ const ContactForm = () => {
           date: selectedDate.toDateString(),
         }),
       });
-  
+
       if (response.ok) {
         // Successful submission
         setSuccessMessage('Form submitted successfully!');
@@ -70,7 +70,7 @@ const ContactForm = () => {
       setError('Failed to communicate with the server.');
     }
   };
-  
+
   return (
     <section id="contact" className="relative py-20 bg-white overflow-hidden" data-aos="fade-up">
       {/* Decorative Branch Images */}
@@ -101,7 +101,7 @@ const ContactForm = () => {
 
       <div className="container mx-auto px-6">
         {/* Updated h2 with font-serif */}
-        <h2 className="text-4xl font-bold text-center mb-8 text-primary font-serif">Book a Visit</h2>
+        <h2 className="text-4xl font-bold text-center mt-8 mb-8 text-primary font-serif" data-aos="fade-up">Book a Visit</h2>
 
         {/* Display success or error message */}
         {successMessage && <div className="mb-4 text-green-500">{successMessage}</div>}
@@ -177,9 +177,8 @@ const ContactForm = () => {
               </div>
 
               <div
-                className={`absolute right-0 top-full mt-2 z-50 bg-white shadow-lg rounded-lg p-4 transition-all duration-300 ${
-                  isCalendarVisible ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-                }`}
+                className={`absolute right-0 top-full mt-2 z-50 bg-white shadow-lg rounded-lg p-4 transition-all duration-300 ${isCalendarVisible ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+                  }`}
               >
                 <Calendar
                   onChange={(date) => handleDateChange(date as Date | null)}

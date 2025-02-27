@@ -1,4 +1,8 @@
+import { useNavigation } from "../context/NavigationContext";
+
 const Features = () => {
+  const navigateToPackages = useNavigation();
+
   const features = [
     {
       title: "Corporate Events & Meetings",
@@ -52,8 +56,10 @@ const Features = () => {
                 {feature.title}
               </h3>
               <p className="text-gray-600 mb-4">{feature.description}</p>
-              <button className="px-8 py-3 bg-button text-white rounded-full text-lg font-semibold transition duration-300 hover:bg-buttonShadow hover:shadow-lg">
-                Learn More
+              <button
+                onClick={navigateToPackages}
+                className="px-8 py-3 bg-button text-white rounded-full text-lg font-semibold transition duration-300 hover:bg-buttonShadow hover:shadow-lg">
+                  Learn More
               </button>
             </div>
           </div>

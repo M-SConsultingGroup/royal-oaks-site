@@ -1,4 +1,8 @@
+import { useNavigation } from "../context/NavigationContext";
+
 const HeroSection = () => {
+  const { navigateToContact } = useNavigation();
+  
   return (
     <section
       className="relative h-screen flex flex-col items-center justify-center text-center bg-cover bg-center"
@@ -32,7 +36,9 @@ const HeroSection = () => {
         <p className="text-2xl text-secondary drop-shadow-md mb-6 font-light italic">
           The perfect setting for your dream event
         </p>
-        <button className="bg-button text-white px-8 py-3 text-lg font-semibold font-serif rounded-full shadow-md hover:bg-buttonShadow transition-all duration-300">
+        <button
+          onClick={navigateToContact}
+          className="bg-button text-white px-8 py-3 text-lg font-semibold font-serif rounded-full shadow-md hover:bg-buttonShadow transition-all duration-300">
           Book Your Event
         </button>
       </div>
