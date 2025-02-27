@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react"; // Mobile menu icon
+import { Menu } from "lucide-react"; 
+import { useNavigation } from "../context/NavigationContext"; 
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { navigateToHome, navigateToAbout, navigateToPackages, navigateToContact } = useNavigation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +29,7 @@ const Header = () => {
       ${isScrolled ? "bg-button bg-opacity-90 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative h-[7rem]">
 
-        {/* Mobile Menu Button (Left Aligned in Mobile) */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center flex-shrink-0">
           <button
             className="text-secondary hover:text-button transition"
@@ -37,90 +39,83 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Logo (Left on Desktop, Center on Mobile) */}
+        {/* Logo */}
         <div className="md:static absolute left-1/2 transform md:translate-x-0 -translate-x-1/2 flex">
-          <a href="/">
+          <button onClick={navigateToHome}>
             <img
               src={isScrolled ? "darkLogo.png" : "logo.png"}
               alt="Royal Oaks Logo"
               className="h-[5rem] md:h-[6rem] max-h-[7rem] object-contain shadow-none"
             />
-          </a>
+          </button>
         </div>
 
-        {/* Desktop Navigation (Right Aligned) */}
+        {/* Desktop Navigation */}
         <nav className={`hidden md:flex space-x-10 text-lg font-serif uppercase tracking-wide 
           ${isScrolled ? "text-white" : "text-primary"} scroll-smooth`}>
-          <a
-            href="/about"
-            onClick={() => handleSmoothScroll("about")}
+          <button
+            onClick={navigateToAbout}
             className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             About
-          </a>
-          <a
-            href="/#events"
+          </button>
+          <button
             onClick={() => handleSmoothScroll("events")}
             className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             Events
-          </a>
-          <a
-            href="/packages"
+          </button>
+          <button
+            onClick={navigateToPackages}
             className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             Package Deals
-          </a>
-          <a
-            href="/contact"
-            onClick={() => handleSmoothScroll("contact")}
+          </button>
+          <button
+            onClick={navigateToContact}
             className={`hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             Contact
-          </a>
+          </button>
         </nav>
 
-        {/* Empty Spacer (For Desktop Layout Alignment) */}
+        {/* Empty Spacer */}
         <div className="hidden md:flex w-12"></div>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-primary py-6 space-y-5 text-center text-secondary text-lg font-semibold uppercase tracking-wide shadow-lg scroll-smooth">
-          <a
-            href="#"
-            onClick={() => handleSmoothScroll("")}
+          <button
+            onClick={navigateToHome}
             className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             Home
-          </a>
-          <a
-            href="#about"
-            onClick={() => handleSmoothScroll("about")}
+          </button>
+          <button
+            onClick={navigateToAbout}
             className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             About
-          </a>
-          <a
-            href="#events"
+          </button>
+          <button
             onClick={() => handleSmoothScroll("events")}
             className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             Events
-          </a>
-          <a
-            href="#contact"
-            onClick={() => handleSmoothScroll("contact")}
+          </button>
+          <button
+            onClick={navigateToContact}
             className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             Contact
-          </a>
-          <a
-            href="/packages"
+          </button>
+          <button
+            onClick={navigateToPackages}
             className={`block hover:${isScrolled ? "text-primary" : "text-button"} transition-all duration-300`}
           >
             Package Deals
-          </a>
+          </button>
         </div>
       )}
     </header>
